@@ -1,0 +1,27 @@
+button {
+    height: 50px;
+    width: 50px;
+    margin: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: blue;
+    float: left;
+}
+span{
+    margin: 5px;
+}
+input{
+    margin: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkred;
+}
+body{
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+}
+.winningLine{
+    background-color: aliceblue;
+    border-color: blue;
+    border-radius: 5px;
+}
