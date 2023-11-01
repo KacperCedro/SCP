@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fXNph/GYx7w62H1t1LW5vVlgH1jTPtwN5gcbJOcGgt2bZ4owx/aJr4KYesUr8AmTQOhTxmxHweWQJ2nm4MPBlA==",
+  "dgSpecHash": "tQ5K6lDkoLcvOuY7Rw53wi91GohEFJykhoGjxixaBsAXJ6dQcssRVgKkwiDRuSnsCwPnDUsxeaUtX7vQ8zRlxw==",
   "success": true,
-  "projectFilePath": "C:\\KacperCedro\\C#\\Calculator\\Calculator.csproj",
+  "projectFilePath": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

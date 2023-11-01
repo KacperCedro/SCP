@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\KacperCedro\\C#\\Calculator\\Calculator.csproj",
+      "projectUniqueName": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "C:\\KacperCedro\\C#\\Calculator\\Calculator.csproj",
+      "projectPath": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj",
       "packagesPath": "C:\\Users\\kcedr\\.nuget\\packages\\",
-      "outputPath": "C:\\KacperCedro\\C#\\Calculator\\obj\\",
+      "outputPath": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

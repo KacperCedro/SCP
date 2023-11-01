@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Calculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -26,14 +23,54 @@ namespace Calculator
             InitializeComponent();
         }
 
-        struct SignsAndPrioritys
+        struct SignsAndPriorities
         {
-            char sign;
-            byte priority;
+            public SignsAndPriorities(char sign, byte priority, bool isLeftSided)
+            {
+                Sign = sign;
+                Priority = priority;
+                IsLeftSided = isLeftSided;
+            }
+            public char Sign { get; set; }
+            public byte Priority { get; set; }
+            public bool IsLeftSided { get; set; }
         }
 
-        List<SignsAndPrioritys> signs = new List<SignsAndPrioritys> {
-        };
+
+
+        public static string InfixToRPN(string result)
+        {
+            List<SignsAndPriorities> signs = new List<SignsAndPriorities>
+            {
+                new SignsAndPriorities('(', 0, true),
+                new SignsAndPriorities('+', 1, true),
+                new SignsAndPriorities('-', 1, true),
+                new SignsAndPriorities(')', 1, true),
+                new SignsAndPriorities('x', 2, true),
+                new SignsAndPriorities('/', 2, true),
+                new SignsAndPriorities('%', 2, true),
+                new SignsAndPriorities('^', 3, false),
+            };
+
+            Stack<SignsAndPriorities> stackOfSigns;
+
+            Stack<string> stackOfNumbers;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = 0; j < signs.Count; j++)
+                {
+                    if (result[i] == signs[j].Sign)
+                    {
+
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        #region BUttonHandlers
         private void Button7_Click(object sender, RoutedEventArgs e)
         {
             if (labelResult.Content.ToString() == "0")
@@ -173,7 +210,6 @@ namespace Calculator
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
-            string result = labelResult.Content.ToString();
 
         }
 
@@ -241,4 +277,5 @@ namespace Calculator
             });
         }
     }
+    #endregion
 }

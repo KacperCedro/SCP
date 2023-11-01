@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\KacperCedro\C#\Calculator\obj\Debug\net6.0-windows\
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\
 Calculator
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\KacperCedro\C#\Calculator\App.xaml
+C:\KacperCedro\PublicProjects\.NET\Calculator\App.xaml
 11407045341
 
 51868583911
 194101785492
 MainWindow.xaml;
 
-True
+False
 
