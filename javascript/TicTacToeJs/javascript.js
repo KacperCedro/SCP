@@ -85,17 +85,13 @@ function Gameplay(row, col, tableSize) {
             WinningCall(currentPlayerSign)
         }, 500)
     }
-
     else if (CheckForDraw(tableSize)) {
         setTimeout(() => {
             alert("draw in game")
             location.reload()
         }, 1000);
-
     }
-
     currentPlayer++
-
     if (currentPlayer > playerSigns.length - 1) {
         currentPlayer = 0
     }
