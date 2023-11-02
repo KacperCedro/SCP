@@ -40,10 +40,8 @@ namespace Calculator
         {
             List<SignsAndPriorities> listOfSigns = new List<SignsAndPriorities>
             {
-                //new SignsAndPriorities('(', 0, true),
                 new SignsAndPriorities('+', 1, true),
                 new SignsAndPriorities('-', 1, true),
-                //new SignsAndPriorities(')', 1, true),
                 new SignsAndPriorities('x', 2, true),
                 new SignsAndPriorities('/', 2, true),
                 new SignsAndPriorities('%', 2, true),
@@ -63,10 +61,21 @@ namespace Calculator
 
             Stack<string> stackOut = new Stack<string>();
 
+            string tmpNumber = "";
+
+            string newResult = "";
+
             for (int i = 0; i < result.Length; i++)
             {
-
-                if (result[i] == leftBracket.Sign)
+                if (listForNumbers.Contains(result[i]))
+                {
+                    tmpNumber += result[i];
+                }
+                else if(!listForNumbers.Contains(result[i]))
+                {
+                    stackOut.Push(tmpNumber);
+                }
+                else if (result[i] == leftBracket.Sign)
                 {
                     stackOfSigns.Push(leftBracket);
                 }
@@ -74,21 +83,40 @@ namespace Calculator
                 {
                     foreach (var item in stackOfSigns)
                     {
-                        if(item.Sign != leftBracket.Sign)
+                        if (item.Sign != leftBracket.Sign)
                         {
                             stackOut.Push(stackOfSigns.Pop().Sign.ToString());
                         }
-                        if(item.Sign == leftBracket.Sign)
+                        if (item.Sign == leftBracket.Sign)
                         {
                             stackOfSigns.Pop();
-                        } 
+                            break;
+                        }
                     }
                 }
-                
-
+                foreach (var item in listOfSigns)
+                {
+                    if (item.Sign == result[i])
+                    {
+                        foreach (var cell in stackOfSigns)
+                        {
+                            if(cell.Priority <= item.Priority)
+                            {
+                                stackOut.Push(stackOfSigns.Pop().Sign.ToString());
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
+                }
             }
-
-            return result;
+            for (int z = 0; z < stackOut.Count; z++)
+            {
+                newResult += $"{stackOut.Pop()}";
+            }
+            return newResult;
         }
 
         #region BUttonHandlers
@@ -231,7 +259,7 @@ namespace Calculator
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
-
+            labelResult.Content = InfixToRPN(labelResult.Content.ToString());
         }
 
         private void buttonDivide_Click(object sender, RoutedEventArgs e)

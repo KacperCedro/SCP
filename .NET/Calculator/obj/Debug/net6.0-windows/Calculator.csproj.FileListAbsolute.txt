@@ -41,3 +41,25 @@ C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\refint\C
 C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
 C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
 C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
+C:\KacperCedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.exe
+C:\KacperCedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.deps.json
+C:\KacperCedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.runtimeconfig.json
+C:\KacperCedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.dll
+C:\KacperCedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.pdb
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.AssemblyReference.cache
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\App.g.cs
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator_MarkupCompile.cache
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator_MarkupCompile.lref
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\App.baml
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\MainWindow.baml
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.g.resources
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfoInputs.cache
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfo.cs
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.CoreCompileInputs.cache
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.dll
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\refint\Calculator.dll
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
+C:\KacperCedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
