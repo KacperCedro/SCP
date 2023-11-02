@@ -36,35 +36,56 @@ namespace Calculator
             public bool IsLeftSided { get; set; }
         }
 
-
-
         public static string InfixToRPN(string result)
         {
-            List<SignsAndPriorities> signs = new List<SignsAndPriorities>
+            List<SignsAndPriorities> listOfSigns = new List<SignsAndPriorities>
             {
-                new SignsAndPriorities('(', 0, true),
+                //new SignsAndPriorities('(', 0, true),
                 new SignsAndPriorities('+', 1, true),
                 new SignsAndPriorities('-', 1, true),
-                new SignsAndPriorities(')', 1, true),
+                //new SignsAndPriorities(')', 1, true),
                 new SignsAndPriorities('x', 2, true),
                 new SignsAndPriorities('/', 2, true),
                 new SignsAndPriorities('%', 2, true),
                 new SignsAndPriorities('^', 3, false),
             };
 
-            Stack<SignsAndPriorities> stackOfSigns;
+            SignsAndPriorities leftBracket = new SignsAndPriorities('(', 0, true);
 
-            Stack<string> stackOfNumbers;
+            SignsAndPriorities rightBrcket = new SignsAndPriorities(')', 0, true);
+
+            List<char> listForNumbers = new List<char>
+            {
+                '0','1','2','3','4','5','6','7','8','9',','
+            };
+
+            Stack<SignsAndPriorities> stackOfSigns = new Stack<SignsAndPriorities>();
+
+            Stack<string> stackOut = new Stack<string>();
 
             for (int i = 0; i < result.Length; i++)
             {
-                for (int j = 0; j < signs.Count; j++)
-                {
-                    if (result[i] == signs[j].Sign)
-                    {
 
+                if (result[i] == leftBracket.Sign)
+                {
+                    stackOfSigns.Push(leftBracket);
+                }
+                else if (result[i] == rightBrcket.Sign)
+                {
+                    foreach (var item in stackOfSigns)
+                    {
+                        if(item.Sign != leftBracket.Sign)
+                        {
+                            stackOut.Push(stackOfSigns.Pop().Sign.ToString());
+                        }
+                        if(item.Sign == leftBracket.Sign)
+                        {
+                            stackOfSigns.Pop();
+                        } 
                     }
                 }
+                
+
             }
 
             return result;

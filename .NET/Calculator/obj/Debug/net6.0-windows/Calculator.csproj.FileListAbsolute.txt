@@ -20,3 +20,24 @@ C:\KacperCedro\C#\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
 C:\KacperCedro\C#\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
 C:\KacperCedro\C#\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
 C:\KacperCedro\C#\Calculator\obj\Debug\net6.0-windows\App.baml
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.exe
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.deps.json
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.runtimeconfig.json
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.dll
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\bin\Debug\net6.0-windows\Calculator.pdb
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\App.g.cs
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator_MarkupCompile.cache
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator_MarkupCompile.lref
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\App.baml
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.g.resources
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfoInputs.cache
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfo.cs
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.CoreCompileInputs.cache
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.dll
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\refint\Calculator.dll
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
+C:\Kacper Cedro\PublicProjects\.NET\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
