@@ -36,7 +36,7 @@ namespace Calculator
             public bool IsLeftSided { get; set; }
         }
 
-        public static string InfixToRPN(string result)
+        public static string InfixToRPN(string token)
         {
             #region valuesForRPN
             List<SignsAndPriorities> listOfSigns = new List<SignsAndPriorities>
@@ -59,39 +59,39 @@ namespace Calculator
             };
 
             Stack<SignsAndPriorities> stackOfSigns = new Stack<SignsAndPriorities>();
-            Queue<string> queueOut = new Queue<string>();
+            Queue<string> outputQueue = new Queue<string>();
 
             string tmpNumber = "";
 
-            string newResult = "";
+            token += "="; 
 
-            result += "=";
+            string result = "";
 
             #endregion
 
-            for (int i = 0; i < result.Length; i++)
+            for (int i = 0; i < token.Length; i++)
             {
 
-                if (listForNumbers.Contains(result[i]))
+                if (listForNumbers.Contains(token[i]))
                 {
-                    tmpNumber += result[i];
+                    tmpNumber += token[i];
                 }
-                if (!listForNumbers.Contains(result[i]))
+                if (!listForNumbers.Contains(token[i]))
                 {
-                    queueOut.Enqueue(tmpNumber);
+                    outputQueue.Enqueue(tmpNumber);
                     tmpNumber = "";
                 }
-                if (result[i] == leftBracket.Sign)
+                if (token[i] == leftBracket.Sign)
                 {
                     stackOfSigns.Push(leftBracket);
                 }
-                if (result[i] == rightBrcket.Sign)
+                else if (token[i] == rightBrcket.Sign)
                 {
                     foreach (var item in stackOfSigns)
                     {
                         if (item.Sign != leftBracket.Sign)
                         {
-                            queueOut.Enqueue(stackOfSigns.Pop().Sign.ToString());
+                            outputQueue.Enqueue(stackOfSigns.Pop().Sign.ToString());
                         }
                         if (item.Sign == leftBracket.Sign)
                         {
@@ -100,39 +100,43 @@ namespace Calculator
                         }
                     }
                 }
-                foreach (var item in listOfSigns)
+                else
                 {
-                    if (item.Sign == result[i])
+                    foreach (var item in listOfSigns)
                     {
-                        while(stackOfSigns.Count > 0)
+                        if (item.Sign == token[i])
                         {
-                            SignsAndPriorities tmpSign = stackOfSigns.Pop();
-                            if(tmpSign.Priority <= item.Priority)
+                            while (stackOfSigns.Count > 0)
                             {
-                                queueOut.Enqueue(tmpSign.Sign.ToString());
+                                SignsAndPriorities tmpSign = stackOfSigns.Pop();
+                                if (tmpSign.Priority <= item.Priority)
+                                {
+                                    outputQueue.Enqueue(tmpSign.Sign.ToString());
+                                }
+                                else
+                                {
+                                    stackOfSigns.Push(tmpSign);
+                                    break;
+                                }
                             }
-                            else
-                            {
-                                stackOfSigns.Push(tmpSign);
-                                break;
-                            }
+                            stackOfSigns.Push(item);
+                            break;
                         }
-                        stackOfSigns.Push(item);
                     }
                 }
-                if (result[i] == '=')
+                if (token[i] == '=')
                 {
-                    foreach (var item in stackOfSigns)
+                    while (stackOfSigns.Count > 0)
                     {
-                        queueOut.Enqueue(item.Sign.ToString());
+                        outputQueue.Enqueue(stackOfSigns.Pop().Sign.ToString());
                     }
                 }
             }
-            foreach (var cell in queueOut)
+            foreach (var cell in outputQueue)
             {
-                newResult += $"{cell}";
+                result += $"{cell}";
             }
-            return newResult;
+            return result;
         }
 
         #region BUttonHandlers
