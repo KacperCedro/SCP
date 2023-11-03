@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj": {}
+    "C:\\KacperCedro\\SCP\\Calculator\\Calculator.csproj": {}
   },
   "projects": {
-    "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj": {
+    "C:\\KacperCedro\\SCP\\Calculator\\Calculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj",
+        "projectUniqueName": "C:\\KacperCedro\\SCP\\Calculator\\Calculator.csproj",
         "projectName": "Calculator",
-        "projectPath": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\Calculator.csproj",
+        "projectPath": "C:\\KacperCedro\\SCP\\Calculator\\Calculator.csproj",
         "packagesPath": "C:\\Users\\kcedr\\.nuget\\packages\\",
-        "outputPath": "C:\\KacperCedro\\PublicProjects\\.NET\\Calculator\\obj\\",
+        "outputPath": "C:\\KacperCedro\\SCP\\Calculator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -38,19 +38,20 @@ namespace Calculator
 
         public static string InfixToRPN(string result)
         {
+            #region valuesForRPN
             List<SignsAndPriorities> listOfSigns = new List<SignsAndPriorities>
             {
                 new SignsAndPriorities('+', 1, true),
                 new SignsAndPriorities('-', 1, true),
                 new SignsAndPriorities('x', 2, true),
                 new SignsAndPriorities('/', 2, true),
-                new SignsAndPriorities('%', 2, true),
+                new SignsAndPriorities('%', 3, true),
                 new SignsAndPriorities('^', 3, false),
             };
 
-            SignsAndPriorities leftBracket = new SignsAndPriorities('(', 0, true);
 
-            SignsAndPriorities rightBrcket = new SignsAndPriorities(')', 0, true);
+            SignsAndPriorities leftBracket = new SignsAndPriorities('(', 0, true);
+            SignsAndPriorities rightBrcket = new SignsAndPriorities(')', 1, true);
 
             List<char> listForNumbers = new List<char>
             {
@@ -58,34 +59,39 @@ namespace Calculator
             };
 
             Stack<SignsAndPriorities> stackOfSigns = new Stack<SignsAndPriorities>();
-
-            Stack<string> stackOut = new Stack<string>();
+            Queue<string> queueOut = new Queue<string>();
 
             string tmpNumber = "";
 
             string newResult = "";
 
+            result += "=";
+
+            #endregion
+
             for (int i = 0; i < result.Length; i++)
             {
+
                 if (listForNumbers.Contains(result[i]))
                 {
                     tmpNumber += result[i];
                 }
-                else if(!listForNumbers.Contains(result[i]))
+                if (!listForNumbers.Contains(result[i]))
                 {
-                    stackOut.Push(tmpNumber);
+                    queueOut.Enqueue(tmpNumber);
+                    tmpNumber = "";
                 }
-                else if (result[i] == leftBracket.Sign)
+                if (result[i] == leftBracket.Sign)
                 {
                     stackOfSigns.Push(leftBracket);
                 }
-                else if (result[i] == rightBrcket.Sign)
+                if (result[i] == rightBrcket.Sign)
                 {
                     foreach (var item in stackOfSigns)
                     {
                         if (item.Sign != leftBracket.Sign)
                         {
-                            stackOut.Push(stackOfSigns.Pop().Sign.ToString());
+                            queueOut.Enqueue(stackOfSigns.Pop().Sign.ToString());
                         }
                         if (item.Sign == leftBracket.Sign)
                         {
@@ -98,23 +104,33 @@ namespace Calculator
                 {
                     if (item.Sign == result[i])
                     {
-                        foreach (var cell in stackOfSigns)
+                        while(stackOfSigns.Count > 0)
                         {
-                            if(cell.Priority <= item.Priority)
+                            SignsAndPriorities tmpSign = stackOfSigns.Pop();
+                            if(tmpSign.Priority <= item.Priority)
                             {
-                                stackOut.Push(stackOfSigns.Pop().Sign.ToString());
+                                queueOut.Enqueue(tmpSign.Sign.ToString());
                             }
                             else
                             {
+                                stackOfSigns.Push(tmpSign);
                                 break;
                             }
                         }
+                        stackOfSigns.Push(item);
+                    }
+                }
+                if (result[i] == '=')
+                {
+                    foreach (var item in stackOfSigns)
+                    {
+                        queueOut.Enqueue(item.Sign.ToString());
                     }
                 }
             }
-            for (int z = 0; z < stackOut.Count; z++)
+            foreach (var cell in queueOut)
             {
-                newResult += $"{stackOut.Pop()}";
+                newResult += $"{cell}";
             }
             return newResult;
         }
