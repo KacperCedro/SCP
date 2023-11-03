@@ -1,2 +1,4 @@
-# PublicProjects
-My projects for for simple portfolio
+# SCP
+SCP stands for Scientific Calculator Programme
+
+## 
