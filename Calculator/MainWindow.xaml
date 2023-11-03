@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Simple Calcualtor" Height="500" Width="300" Background="#09191F">
+        Title="Simple Calcualtor" Height="500" Width="350" Background="#09191F">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -77,6 +77,8 @@
                         Width="*" />
             <ColumnDefinition
                         Width="*" />
+            <ColumnDefinition
+                Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition
@@ -100,7 +102,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             x:Name="labelResult"
-            Grid.ColumnSpan="4"
+            Grid.ColumnSpan="5"
             >
         </Label>
         <Button Style="{DynamicResource SpecialButton}"
@@ -137,7 +139,7 @@
         <Button Style="{DynamicResource SpecialButton}"
             Grid.Row="1"
             Grid.Column="1"
-            Content=":)"
+            Content="Git"
             x:Name="buttonRepo"
             Click="buttonRepo_Click"/>
         <Button Style="{DynamicResource SpecialButton}"
@@ -191,25 +193,25 @@
         <Button Style="{DynamicResource SpecialButton}"
             Grid.ColumnSpan="2"
             Grid.Row="5"
-            Grid.Column="2"
+            Grid.Column="3"
             Content="="
             x:Name="ButtonEqual"
             Click="ButtonEqual_Click"/>
         <Button Style="{DynamicResource SpecialButton}"
-            Grid.Row="1"
-            Grid.Column="3"
+            Grid.Row="3"
+            Grid.Column="4"
             Content="/"
             x:Name="buttonDivide"
             Click="buttonDivide_Click"/>
         <Button Style="{DynamicResource SpecialButton}"
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="3"
             Content="x"
             x:Name="ButtonTimes"
             Click="ButtonTimes_Click"/>
         <Button Style="{DynamicResource SpecialButton}"
-            Grid.Row="3"
-            Grid.Column="3"
+            Grid.Row="4"
+            Grid.Column="4"
             Content="-"
             x:Name="ButtonMinus"
             Click="ButtonMinus_Click"/>
@@ -219,6 +221,39 @@
             Content="+"
             x:Name="ButtonPlus"
             Click="ButtonPlus_Click"/>
+        <Button 
+            Style="{DynamicResource SpecialButton}"
+            Grid.Row="2"
+            Grid.Column="3"
+            Content="&#960;"
+                x:Name="ButtonPi"
+                Click="ButtonPi_Click"/>
+        <Button Style="{DynamicResource SpecialButton}"
+                Grid.Row="2"
+                Grid.Column="4"
+                Content="%"
+                x:Name="ButtonModulo"
+                Click="ButtonModulo_Click"/>
+        <Button Style="{DynamicResource SpecialButton}"
+            Grid.Row="1"
+            Grid.Column="3"
+            Content="("
+                x:Name="ButtonLeftBracket"
+                Click="ButtonLeftBracket_Click"/>
+        <Button Style="{DynamicResource SpecialButton}"
+                Grid.Row="1"
+                Grid.Column="4"
+                Content=")"
+                x:Name="ButtonRightBracket"
+                Click="ButtonRightBracket_Click"/>
+        <Button Style="{DynamicResource SpecialButton}"
+                Grid.Row="5"
+                Grid.Column="2"
+                Content="1010"
+                UseLayoutRounding="True"
+                x:Name="ButtonBinaryConverter"
+                Click="ButtonBinaryConverter_Click"
+                ToolTip="Convert number to binary (only integer)"/>
     </Grid>
-    
+
 </Window>

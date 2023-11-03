@@ -36,7 +36,7 @@ namespace Calculator
             public bool IsLeftSided { get; set; }
         }
 
-        public static string InfixToRPN(string token)
+        public static Queue<string> InfixToRPN(string token)
         {
             #region valuesForRPN
             List<SignsAndPriorities> listOfSigns = new List<SignsAndPriorities>
@@ -64,8 +64,6 @@ namespace Calculator
             string tmpNumber = "";
 
             token += "="; 
-
-            string result = "";
 
             #endregion
 
@@ -100,7 +98,7 @@ namespace Calculator
                         }
                     }
                 }
-                else
+                else if (token[i] != 'P')
                 {
                     foreach (var item in listOfSigns)
                     {
@@ -109,7 +107,7 @@ namespace Calculator
                             while (stackOfSigns.Count > 0)
                             {
                                 SignsAndPriorities tmpSign = stackOfSigns.Pop();
-                                if (tmpSign.Priority <= item.Priority)
+                                if ((item.Priority <= tmpSign.Priority && tmpSign.IsLeftSided)||(item.Priority < tmpSign.Priority && tmpSign.IsLeftSided))
                                 {
                                     outputQueue.Enqueue(tmpSign.Sign.ToString());
                                 }
@@ -124,6 +122,10 @@ namespace Calculator
                         }
                     }
                 }
+                else
+                {
+                    outputQueue.Enqueue(token[i].ToString());
+                }
                 if (token[i] == '=')
                 {
                     while (stackOfSigns.Count > 0)
@@ -132,12 +134,10 @@ namespace Calculator
                     }
                 }
             }
-            foreach (var cell in outputQueue)
-            {
-                result += $"{cell}";
-            }
-            return result;
+            return outputQueue;
         }
+
+
 
         #region BUttonHandlers
         private void Button7_Click(object sender, RoutedEventArgs e)
@@ -344,6 +344,59 @@ namespace Calculator
                 FileName = "https://github.com/KacperCedro/PublicProjects",
                 UseShellExecute = true
             });
+        }
+
+        private void ButtonPi_Click(object sender, RoutedEventArgs e)
+        {
+            if (labelResult.Content.ToString() == "0")
+            {
+                labelResult.Content = "P";
+            }
+            else
+            {
+                labelResult.Content += "P";
+            }
+        }
+
+        private void ButtonModulo_Click(object sender, RoutedEventArgs e)
+        {
+            if (labelResult.Content.ToString() == "0")
+            {
+                labelResult.Content = "%";
+            }
+            else
+            {
+                labelResult.Content += "%";
+            }
+        }
+
+        private void ButtonLeftBracket_Click(object sender, RoutedEventArgs e)
+        {
+            if (labelResult.Content.ToString() == "0")
+            {
+                labelResult.Content = "(";
+            }
+            else
+            {
+                labelResult.Content += "(";
+            }
+        }
+
+        private void ButtonRightBracket_Click(object sender, RoutedEventArgs e)
+        {
+            if (labelResult.Content.ToString() == "0")
+            {
+                labelResult.Content = ")";
+            }
+            else
+            {
+                labelResult.Content += ")";
+            }
+        }
+
+        private void ButtonBinaryConverter_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
     #endregion

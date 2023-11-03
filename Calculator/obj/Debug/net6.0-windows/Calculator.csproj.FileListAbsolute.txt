@@ -85,3 +85,4 @@ C:\KacperCedro\SCP\Calculator\obj\Debug\net6.0-windows\refint\Calculator.dll
 C:\KacperCedro\SCP\Calculator\obj\Debug\net6.0-windows\Calculator.pdb
 C:\KacperCedro\SCP\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
 C:\KacperCedro\SCP\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
+C:\KacperCedro\SCP\Calculator\obj\Debug\net6.0-windows\Calculator_Content.g.cs
