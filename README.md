@@ -13,4 +13,4 @@ I relly want to know how... So how it works? it's preety simple:
 
   The design is kinda stylish (I wish so), and maybe someday it will be refactored. 
 
-![theDesign](https://github.com/KacperCedro/SCP/blob/main/Calculator/Calculator.png?raw=true)
+![theDesign](https://github.com/KacperCedro/SCP/blob/main/Calculator/calculatorDesign.png?raw=true)
