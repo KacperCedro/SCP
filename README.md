@@ -1,7 +1,7 @@
 # SCP
 SCP stands for Scientific Calculator Programme
 
-##Warning!
+## Warning!
 I have to admit this is my first project using WPF, but not last. I just trying to improve my skils, so feel free to copy this trash :)
 
 ## How it works?
@@ -12,3 +12,5 @@ I relly want to know how... So how it works? it's preety simple:
 - finally user gets result (or error ;]
 
   The design is kinda stylish (I wish so), and maybe someday it will be refactored. 
+
+![theDesign](https://github.com/KacperCedro/SCP/blob/main/Calculator/Calculator.png?raw=true)
