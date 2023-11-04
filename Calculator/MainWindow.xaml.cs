@@ -85,15 +85,29 @@ namespace Calculator
                 }
                 else if (token[i] == rightBrcket.Sign)
                 {
-                    foreach (var item in stackOfSigns)
+                    //foreach (var item in stackOfSigns)
+                    //{
+                    //    if (item.Sign != leftBracket.Sign)
+                    //    {
+                    //        outputQueue.Enqueue(stackOfSigns.Pop().Sign.ToString());
+                    //    }
+                    //    if (item.Sign == leftBracket.Sign)
+                    //    {
+                    //        stackOfSigns.Pop();
+                    //        break;
+                    //    }
+                    //}
+                    while (stackOfSigns.Count > 0)
                     {
-                        if (item.Sign != leftBracket.Sign)
+                        SignsAndPriorities tmpSign = stackOfSigns.Pop();
+                        if(tmpSign.Sign != leftBracket.Sign)
                         {
-                            outputQueue.Enqueue(stackOfSigns.Pop().Sign.ToString());
+                            outputQueue.Enqueue(tmpSign.Sign.ToString());
                         }
-                        if (item.Sign == leftBracket.Sign)
+                        else if(tmpSign.Sign == leftBracket.Sign)
                         {
                             stackOfSigns.Pop();
+                            stackOfSigns.Push(tmpSign);
                             break;
                         }
                     }
@@ -137,7 +151,83 @@ namespace Calculator
             return outputQueue;
         }
 
+        public static string CalculateRPN(Queue<string> outputQueue)
+        {
 
+
+            string result = "";
+
+            Stack<string> stackOfNumbers = new Stack<string>();
+            
+            float a = 0;
+            float b = 0;
+            float tmpNumber = 0;
+            string tmpString = "";
+
+            try
+            {
+                foreach (string item in outputQueue)
+                {
+                    if (float.TryParse(item, out tmpNumber))
+                    {
+                        stackOfNumbers.Push(item);
+                        tmpNumber = 0;
+                    }
+                    if (item == "P")
+                    {
+                        stackOfNumbers.Push("3,14");
+                    }
+                    switch (item)
+                    {
+                        case "+":
+                            a = float.Parse(stackOfNumbers.Pop());
+                            b = float.Parse(stackOfNumbers.Pop());
+                            tmpNumber = b + a;
+                            tmpString = tmpNumber.ToString();
+                            stackOfNumbers.Push(tmpString);
+                            tmpString = "";
+                            break;
+                        case "-":
+                            a = float.Parse(stackOfNumbers.Pop());
+                            b = float.Parse(stackOfNumbers.Pop());
+                            tmpNumber = b - a;
+                            tmpString = tmpNumber.ToString();
+                            stackOfNumbers.Push(tmpString);
+                            break;
+                        case "x":
+                            a = float.Parse(stackOfNumbers.Pop());
+                            b = float.Parse(stackOfNumbers.Pop());
+                            tmpNumber = b * a;
+                            tmpString = tmpNumber.ToString();
+                            stackOfNumbers.Push(tmpString);
+                            break;
+                        case "/":
+                            a = float.Parse(stackOfNumbers.Pop());
+                            b = float.Parse(stackOfNumbers.Pop());
+                            tmpNumber = b / a;
+                            tmpString = tmpNumber.ToString();
+                            stackOfNumbers.Push(tmpString);
+                            break;
+                        case "%":
+                            a = float.Parse(stackOfNumbers.Pop());
+                            b = float.Parse(stackOfNumbers.Pop());
+                            tmpNumber = b % a;
+                            tmpString = tmpNumber.ToString();
+                            stackOfNumbers.Push(tmpString);
+                            break;
+                        default:
+                            break;
+                            //return "Error";
+                    }
+                }
+                return stackOfNumbers.Pop();
+            }
+            catch (Exception exception)
+            {
+                return exception.ToString();
+            }
+            return result;
+        }
 
         #region BUttonHandlers
         private void Button7_Click(object sender, RoutedEventArgs e)
@@ -279,7 +369,7 @@ namespace Calculator
 
         private void ButtonEqual_Click(object sender, RoutedEventArgs e)
         {
-            labelResult.Content = InfixToRPN(labelResult.Content.ToString());
+            labelResult.Content = CalculateRPN(InfixToRPN(labelResult.Content.ToString()));
         }
 
         private void buttonDivide_Click(object sender, RoutedEventArgs e)
