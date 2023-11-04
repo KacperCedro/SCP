@@ -360,9 +360,9 @@ namespace Calculator
 
         private void buttonDivide_Click(object sender, RoutedEventArgs e)
         {
-            if (labelResult.Content.ToString() == "0")
+            if (labelResult.Content.ToString() == "")
             {
-                labelResult.Content = "/";
+                labelResult.Content = "0/";
             }
             else
             {
@@ -372,9 +372,9 @@ namespace Calculator
 
         private void ButtonTimes_Click(object sender, RoutedEventArgs e)
         {
-            if (labelResult.Content.ToString() == "0")
+            if (labelResult.Content.ToString() == "")
             {
-                labelResult.Content = "x";
+                labelResult.Content = "0x";
             }
             else
             {
@@ -384,9 +384,9 @@ namespace Calculator
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (labelResult.Content.ToString() == "0")
+            if (labelResult.Content.ToString() == "")
             {
-                labelResult.Content = "-";
+                labelResult.Content = "0-";
             }
             else
             {
@@ -396,9 +396,9 @@ namespace Calculator
 
         private void ButtonPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (labelResult.Content.ToString() == "0")
+            if (labelResult.Content.ToString() == "")
             {
-                labelResult.Content = "+";
+                labelResult.Content = "0+";
             }
             else
             {
