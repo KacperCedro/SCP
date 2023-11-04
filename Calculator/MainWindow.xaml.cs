@@ -63,7 +63,7 @@ namespace Calculator
 
             string tmpNumber = "";
 
-            token += "="; 
+            token += "=";
 
             #endregion
 
@@ -74,7 +74,7 @@ namespace Calculator
                 {
                     tmpNumber += token[i];
                 }
-                if (!listForNumbers.Contains(token[i]))
+                if (!listForNumbers.Contains(token[i]) && token[i] != leftBracket.Sign && token[i] != rightBrcket.Sign)
                 {
                     outputQueue.Enqueue(tmpNumber);
                     tmpNumber = "";
@@ -83,31 +83,17 @@ namespace Calculator
                 {
                     stackOfSigns.Push(leftBracket);
                 }
-                else if (token[i] == rightBrcket.Sign)
+                if (token[i] == rightBrcket.Sign)
                 {
-                    //foreach (var item in stackOfSigns)
-                    //{
-                    //    if (item.Sign != leftBracket.Sign)
-                    //    {
-                    //        outputQueue.Enqueue(stackOfSigns.Pop().Sign.ToString());
-                    //    }
-                    //    if (item.Sign == leftBracket.Sign)
-                    //    {
-                    //        stackOfSigns.Pop();
-                    //        break;
-                    //    }
-                    //}
                     while (stackOfSigns.Count > 0)
                     {
                         SignsAndPriorities tmpSign = stackOfSigns.Pop();
-                        if(tmpSign.Sign != leftBracket.Sign)
+                        if (tmpSign.Sign != leftBracket.Sign)
                         {
                             outputQueue.Enqueue(tmpSign.Sign.ToString());
                         }
-                        else if(tmpSign.Sign == leftBracket.Sign)
+                        else if (tmpSign.Sign == leftBracket.Sign)
                         {
-                            stackOfSigns.Pop();
-                            stackOfSigns.Push(tmpSign);
                             break;
                         }
                     }
@@ -121,7 +107,7 @@ namespace Calculator
                             while (stackOfSigns.Count > 0)
                             {
                                 SignsAndPriorities tmpSign = stackOfSigns.Pop();
-                                if ((item.Priority <= tmpSign.Priority && tmpSign.IsLeftSided)||(item.Priority < tmpSign.Priority && tmpSign.IsLeftSided))
+                                if ((item.Priority <= tmpSign.Priority && tmpSign.IsLeftSided) || (item.Priority < tmpSign.Priority && tmpSign.IsLeftSided))
                                 {
                                     outputQueue.Enqueue(tmpSign.Sign.ToString());
                                 }
@@ -158,7 +144,7 @@ namespace Calculator
             string result = "";
 
             Stack<string> stackOfNumbers = new Stack<string>();
-            
+
             float a = 0;
             float b = 0;
             float tmpNumber = 0;
