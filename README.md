@@ -1,5 +1,5 @@
 # SCP
-SCP stands for Scientific Calculator Programme
+SCP stands for Scientific Calculator Programme (work in progres)
 
 ## Warning!
 I have to admit this is my first project using WPF, but not last. I just trying to improve my skils, so feel free to copy this trash :)
